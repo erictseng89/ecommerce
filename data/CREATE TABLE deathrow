@@ -1,0 +1,25 @@
+CREATE TABLE deathrow (
+    id INT NOT NULL AUTO_INCREMENT,
+    execution INT,
+    date_of_birth DATE,
+    date_of_offence DATE,
+    highest_education_level INT,
+    last_name TEXT,
+    first_name TEXT,
+    TDCJ_number INT,
+    age_at_execution INT,
+    date_received DATE,
+    race TEXT,
+    eye_color TEXT,
+    weight INT,
+    height INT,
+    native_county TEXT,
+    last_statement TEXT,
+    PRIMARY KEY (id)
+);
+
+LOAD DATA INFILE '/mnt/d/eric/ecommerce/data/tx_deathrow_full.csv'
+INTO TABLE deathrow
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '/n'
+IGNORE 1 ROWS;
